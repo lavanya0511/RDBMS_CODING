@@ -1,0 +1,425 @@
+1.Provide a SQL script that initializes the database for the Job 
+
+create database CareerHub;
+
+2. Create tables for Companies, Jobs, Applicants and Applications. 
+
+Table: companies
+
+create table companies ( companyid int primary key,
+companyname varchar(255),
+companylocation varchar(255));
+
+insert into companies values(1,'HCL','Vijaywada');
+insert into companies values(2,'Hexaware','Chennai');
+insert into companies values(3,'Infosys','Banglore');
+insert into companies values(4,'Chetu','Noida');
+insert into companies values(5,'TechM','Vizag');
+insert into companies values(6,'Virtusa','Hyderabad');
+insert into companies values(7,'Deloitte','Hyderabad');
+insert into companies values(8,'Movate','Chennai');
+insert into companies values(9,'Galaxy','Banglore');
+
+Table:Jobs
+
+create table jobs( 
+jobid int primary key, 
+companyid int, 
+jobtitle varchar(255), 
+jobdescription varchar(255),
+ joblocation varchar(255), 
+salary decimal, 
+jobtype varchar(255),
+ posteddate datetime);
+insert into jobs values(101,2,'developer','Good technical skills and strong communication skills are needed','chennai',30000,'permanent','2023-07-08 4:30:00');
+insert into jobs values(102,2,'Data analyst','Communication skills and knowledge in python and data sciences is required','chennai',25000,'permanent','2023-04-21 9:48:30');
+insert into jobs values(103,1,'Tester','Knowledge in programming,SQL,Agile','Vijaywada',35000,'permanent','2022-05-11 5:12:13');
+insert into jobs values(104,6,'developer','Strong programming skills','Hyderabad',33000,'permanent','2023-09-23 9:09:12');
+insert into jobs values(105,3,'Software Engineer','knowlege in data stuctures and java','Banglore',40000,'permanent','2021-08-08 12:12:50');
+insert into jobs values(106,5,'Data Engineer','Knowledge in data science and big data','Vizag',39000,'part time','2021-08-18 11:11:11');
+insert into jobs values(107,9,'developer','Strong programming skills','Banglore',50000,'permanent','2024-01-19 1:13:45');
+
+Table:applicants
+create table applicants( applicationid int primary key,
+ firstname varchar(255),
+ lastname varchar(255), 
+email varchar(300), 
+phone varchar(200), 
+resumes varchar(400));
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (1, 'John', 'Doe', 'john.doe@example.com', '123-456-7890', 'John Doe has 5 years of experience in software development with expertise in Java, Python, and SQL.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (2, 'Jane', 'Smith', 'jane.smith@example.com', '987-654-3210', 'Jane Smith is a certified project manager with strong leadership skills and experience managing teams of diverse backgrounds.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (3, 'Michael', 'Johnson', 'michael.johnson@example.com', '111-222-3333', 'Michael Johnson is a recent graduate with a degree in computer science and internship experience in web development.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (4, 'Emily', 'Williams', 'emily.williams@example.com', '444-555-6666', 'Emily Williams is a detail-oriented marketing specialist with a proven track record of developing successful digital marketing campaigns.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (5, 'Christopher', 'Brown', 'christopher.brown@example.com', '777-888-9999', 'Christopher Brown is a skilled graphic designer with expertise in Adobe Creative Suite and a strong portfolio showcasing creative designs.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (6, 'Amanda', 'Jones', 'amanda.jones@example.com', '101-202-3030', 'Amanda Jones is a customer service professional with experience in resolving customer inquiries and providing excellent service.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (7, 'Matthew', 'Martinez', 'matthew.martinez@example.com', '404-505-6060', 'Matthew Martinez is a financial analyst with a background in financial modeling, forecasting, and budgeting.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (8, 'Sarah', 'Garcia', 'sarah.garcia@example.com', '707-808-9090', 'Sarah Garcia is a registered nurse with experience in medical-surgical nursing and a passion for providing compassionate patient care.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (9, 'Daniel', 'Rodriguez', 'daniel.rodriguez@example.com', '212-313-4141', 'Daniel Rodriguez is a bilingual (English/Spanish) sales representative with a proven track record of meeting and exceeding sales targets.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (10, 'Jennifer', 'Lopez', 'jennifer.lopez@example.com', '515-616-7171', 'Jennifer Lopez is a human resources specialist with experience in recruitment, onboarding, and employee relations.');
+
+Table:applications
+create table applications( application_id int primary key, 
+jobid int, 
+applicationid int, 
+applicationdate datetime, 
+coverletter varchar(300));
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (1, 'John', 'Doe', 'john.doe@example.com', '123-456-7890', 'John Doe has 5 years of experience in software development with expertise in Java, Python, and SQL.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (2, 'Jane', 'Smith', 'jane.smith@example.com', '987-654-3210', 'Jane Smith is a certified project manager with strong leadership skills and experience managing teams of diverse backgrounds.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (3, 'Michael', 'Johnson', 'michael.johnson@example.com', '111-222-3333', 'Michael Johnson is a recent graduate with a degree in computer science and internship experience in web development.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (4, 'Emily', 'Williams', 'emily.williams@example.com', '444-555-6666', 'Emily Williams is a detail-oriented marketing specialist with a proven track record of developing successful digital marketing campaigns.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (5, 'Christopher', 'Brown', 'christopher.brown@example.com', '777-888-9999', 'Christopher Brown is a skilled graphic designer with expertise in Adobe Creative Suite and a strong portfolio showcasing creative designs.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (6, 'Amanda', 'Jones', 'amanda.jones@example.com', '101-202-3030', 'Amanda Jones is a customer service professional with experience in resolving customer inquiries and providing excellent service.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (7, 'Matthew', 'Martinez', 'matthew.martinez@example.com', '404-505-6060', 'Matthew Martinez is a financial analyst with a background in financial modeling, forecasting, and budgeting.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (8, 'Sarah', 'Garcia', 'sarah.garcia@example.com', '707-808-9090', 'Sarah Garcia is a registered nurse with experience in medical-surgical nursing and a passion for providing compassionate patient care.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (9, 'Daniel', 'Rodriguez', 'daniel.rodriguez@example.com', '212-313-4141', 'Daniel Rodriguez is a bilingual (English/Spanish) sales representative with a proven track record of meeting and exceeding sales targets.');
+
+INSERT INTO applicants (applicationid, firstname, lastname, email, phone, Resume) 
+VALUES (10, 'Jennifer', 'Lopez', 'jennifer.lopez@example.com', '515-616-7171', 'Jennifer Lopez is a human resources specialist with experience in recruitment, onboarding, and employee relations.');
+alter table applications
+add foreign key(applicationid) references applicants(applicationid);
+desc applications;
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (1, 101, 3, '2024-03-02 09:00:00', 'Dear Hiring Manager, I am excited to apply for the software developer position.');
+INSERT INTO applications (application_idjobid, applicationid, applicationdate, coverletter) 
+VALUES (1, 101, 1, '2024-03-02 , 09:00:00', 'Dear Hiring Manager, I am excited to apply for the software developer position.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (2, 102, 1, '2024-03-02 09:30:00', 'To Whom It May Concern, I am writing to express my interest in the project manager position.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (3, 103, 3, '2024-03-02 10:00:00', 'Hello, I am submitting my application for the web developer role.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (4, 104, 4, '2024-03-02 10:30:00', 'Dear Hiring Team, I am applying for the marketing specialist position.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (5, 105, 5, '2024-03-02 11:00:00', 'Greetings, I am interested in the graphic designer position and have attached my portfolio for your review.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (6, 106, 6, '2024-03-02 11:30:00', 'Dear Hiring Manager, I am excited to apply for the customer service representative position.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (7, 107, 6, '2024-03-02 12:00:00', 'To the Hiring Committee, I am submitting my application for the financial analyst role.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (8, 103, 8, '2024-03-02 12:30:00', 'Hello, I am interested in the registered nurse position and believe my skills align well with the job requirements.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (9, 102, 9, '2024-03-02 13:00:00', 'Dear Hiring Manager, I am writing to express my interest in the sales representative position.');
+
+INSERT INTO applications (application_id, jobid, applicationid, applicationdate, coverletter) 
+VALUES (10, 105, 10, '2024-03-02 13:30:00', 'To Whom It May Concern, I am applying for the human resources specialist position and have attached my resume for your consideration.');
+
+
+3. Define appropriate primary keys, foreign keys, and constraints.
+alter table jobs 
+add foreign key(companyid) references companies(companyid);
+
+alter table applications 
+add foreign key(applicationid) references applicants(applicationid);
+
+4.Ensure the script handles potential errors, such as if the database or tables already exist
+ create database careerhub;
+ERROR 1007 (HY000): Can't create database 'careerhub'; database exists
+create table jobs(jobid int,location varchar(255));
+ERROR 1050 (42S01): Table 'jobs' already exists
+create table companies(companyid int,companyname varchar(255));
+ERROR 1050 (42S01): Table 'companies' already exists
+
+5.Write an SQL query to count the number of applications received for each job listing in the "Jobs" table. Display the job title and the corresponding application count. Ensure that it lists all jobs, even if they have no applications.                                                                                                                                                                                                                                                                                                                                                                                           
+Select jobs.jobtitle,count(applications.application_id)
+from jobs left join applications on
+jobs.jobid=applications.jobid group by jobs.jobid;
++----------------------+-------+
+| jobtitle                    | count |
++----------------------+-------+
+| developer                |     1    |
+| Data analyst           |     2    |
+| Tester                      |     2    |
+| developer                |     1    |
+| Software Engineer |     2    |
+| Data Engineer        |     1    |
+| developer                |     0    |
++-----------------------+-------+
+
+6.Develop an SQL query that retrieves job listings from the "Jobs" table within a specified salary range. Allow parameters for the minimum and maximum salary values. Display the job title, company name, location, and salary for each matching job.
+
+select j.jobtitle,c.companyname,j.joblocation, j.salary from jobs j 
+inner join companies c on j.companyid=c.companyid 
+where salary between (select min(salary) from jobs) and
+(select max(salary) from jobs);
+
++-----------------------+-----------------+-------------------+--------+
+| jobtitle                     | companyname | joblocation        | salary  |
++-----------------------+-----------------+--------------------+--------+
+| developer                | Hexaware         | Tamilnadu         |  30000 |
+| Data analyst           | Hexaware         | Tamilnadu         |   25000 |
+| Tester                      | HCL                  | Andhra Pradesh |  35000 |
+| developer                | Virtusa              | Telangana          |  33000 |
+| Software Engineer | Infosys              | Karnataka          |  40000 |
+| Data Engineer        | TechM              | Andhra Pradesh |  39000 |
+| developer                | Galaxy              | Karnataka          |  50000 |
++----------------------+-------------------+-------------------+---------+ 
+
+7.Write an SQL query that retrieves the job application history for a specific applicant. Allow a parameter for the ApplicantID, and return a result set with the job titles, company names, and application dates for all the jobs the applicant has applied to.
+
+Select j.jobtitle,c.companyname, a.applicationdate from jobs j
+inner join companies c on j.companyid=c.companyid 
+inner join applications a on j.jobid=a.jobid where j.jobid=102;
+
++--------------+------------------+--------------------------+
+|  jobtitle         | companyname | applicationdate           |
++--------------+------------------+--------------------------+
+| Data analyst | Hexaware       | 2024-03-02 09:30:00 |
+| Data analyst | Hexaware       | 2024-03-02 13:00:00 |
++--------------+------------------+---------------------------+
+
+8.Create an SQL query that calculates and displays the average salary offered by all companies for job listings in the "Jobs" table. Ensure that the query filters out jobs with a salary of zero.
+
+select avg(j.salary) from jobs j left join companies c on j.companyid=c.companyid where salary>0;
+
++-----------------+
+ | avg(j.salary)   |
++-----------------+
+ |   36000.0000  |
++-----------------+
+
+9.Write an SQL query to identify the company that has posted the most job listings. Display the company name along with the count of job listings they have posted. Handle ties if multiple companies have the same maximum count.
+select c.companyname,count(j.jobid) as count from companies c
+join jobs j on c.companyid=j.companyid group by c.companyname 
+having count(j.jobid)=(select count(jobid) from jobs group by companyid order by count(jobid) desc limit 1 );
+
++------------------+-------+
+|companyname  | count  |
++------------------+-------+
+| Hexaware          |     2     |
++------------------+-------+
+
+10.	Find the applicants who have applied for positions in companies located in 'CityX' and have at least 3 years of experience. 
+select a.applicationid,a.firstname,a.lastname
+from applicants a
+join applications ap ON a.applicationid = ap.applicationid
+join jobs j ON ap.jobid = j.jobid where j.joblocation = 'Tamilnadu' and experience>=3;
+
+ +----------------+------------+-------------+
+ | applicationid  | firstname | lastname    |
++-----------------+------------+-------------+
+ |             1          | John        | Doe              |
+ |             9          | Daniel     | Rodriguez   |
++----------------+-----------+----------------+
+
+11.	Retrieve a list of distinct job titles with salaries between $60,000 and $80,000.
+
+select distinct jobtitle from jobs where salary between 30000 and 50000; 
+
+note: table doesn’t have salaries between 60,000 and 80,000
++-----------------------+
+ | jobtitle                     |  
++-----------------------+
+| developer                |
+| Tester                      |
+| Software Engineer |
+| Data Engineer        |
++----------------------+
+
+12.	Find the jobs that have not received any applications.
+
+select j.jobid,j.jobtitle from jobs j 
+where j.jobid not in(select jobid from applications);
+
++--------+------------+
+ | jobid   | jobtitle     |
++--------+------------+
+ |   107   | developer |
++--------+------------+
+
+13.Retrieve a list of job applicants along with the companies they have applied to and the positions they have applied for.
+
+select ap.applicationid,c.companyname,j.jobtitle from applicants ap 
+inner join applications a on ap.applicationid=a.applicationid
+inner join jobs j on a.jobid=j.jobid 
+inner join companies c on c.companyid=j.companyid;
+
++---------------+-------------------+----------------------+
+| applicationid | companyname | jobtitle                    |
++---------------+-------------------+----------------------+
+|             3        | Hexaware           | developer                |
+|             1        | Hexaware           |  Data analyst          |
+|             9        | Hexaware           | Data analyst           |
+|             3        | HCL                    | Tester                      |
+|             8        | HCL                    | Tester                      |
+|             4        | Virtusa                | developer                |
+|             5        | Infosys                | Software Engineer |
+|            10       | Infosys                | Software Engineer |
+|             6        | TechM                | Data Engineer        |
++---------------+-------------------+-----------------------+
+
+14.	Retrieve a list of companies along with the count of jobs they have posted, even if they have not received any applications.
+
+select c.companyname,count(a.application_id) as count,j.jobtitle from companies c
+join jobs j on
+c.companyid=j.companyid left join applications a on a.jobid=j.jobid group by j.jobid;
+
++------------------+-------+---------------------+
+| companyname | count | jobtitle                   |
++------------------+-------+---------------------+
+| Hexaware         |     1     | developer               |
+| Hexaware         |     2     | Data analyst          |
+| HCL                 |     2     | Tester                      |
+| Virtusa             |     1     | developer                |
+| Infosys             |     2     | Software Engineer |
+| TechM             |     1     | Data Engineer        |
+| Galaxy             |     0     | developer                |
++-----------------+-------+-----------------------+
+
+15.	List all applicants along with the companies and positions they have applied for, including those who have not applied.
+select ap.applicationid,c.companyname,j.jobtitle from applicants ap
+left join applications a on ap.applicationid=a.applicationid
+left join jobs j on a.jobid=j.jobid 
+left join companies c on c.companyid=j.companyid;
++---------------+-------------------+-----------------------+
+| applicationid | companyname | jobtitle                     |
++---------------+-------------------+-----------------------+
+|             1        | Hexaware           | Data analyst           |
+|             2        | NULL                 | NULL                     |
+|             3        | Hexaware           | developer                |
+|             3        | HCL                    | Tester                      |
+|             4        | Virtusa                | developer                |
+|             5        | Infosys                | Software Engineer |
+|             6        | TechM                | Data Engineer        |
+|             7        | NULL                 | NULL                     |
+|             8        | HCL                    | Tester                      |
+|             9        | Hexaware           | Data analyst           |
+|            10       | Infosys               | Software Engineer |
++--------------+-------------+-----------------------------+
+
+16.	Find companies that have posted jobs with a salary higher than the average salary of all jobs.
+select c.companyname from companies c 
+join jobs j on c.companyid=j.companyid 
+where j.salary>(select avg(salary) from jobs);
+
++------------------+
+| companyname |
++------------------+
+| Infosys              |
+| TechM              |
+| Galaxy             |
++-----------------+
+
+17.	Display a list of applicants with their names and a concatenated string of their city and state
+
+select firstname as Name,concat(city,',',state) as city_state from applicants;
++---------------+-------------------------+
+| Name            | city_state                    |
++---------------+-------------------------+
+| John              | Banglore,Karnataka |
+| Jane              | Chennai,Tamilnadu  |
+| Michael        | Vizag,AP                    |
+| Emily           | Banglore,Karnataka  |
+| Christopher | NULL                          |
+| Amanda      | NULL                           |
+| Matthew     | NULL                           |
+| Sarah          | Chennai,Tamilnadu   |
+| Daniel        | NULL                          |
+| Jennifer      | NULL                          |
++-------------+--------------------------+
+
+18.	Retrieve a list of jobs with titles containing either 'Developer' or 'Engineer'.
+
+select jobid,jobtitle from jobs where jobtitle='developer' or jobtitle='Software Engineer';
+
++-------+-------------------+
+| jobid  | jobtitle                |
++-------+-------------------+
+|   101  | developer            |
+|   104  | developer              |
+|   105  | Software Engineer |
+|   107  | developer               |
++-------+---------------------+
+
+19.	Retrieve a list of applicants and the jobs they have applied for, including those who have not applied and jobs without applicants.
+select a.applicationid,j.jobtitle,j.jobid from applicants a 
+left join applications ap on a.applicationid=ap.applicationid 
+left join jobs j on j.jobid=ap.jobid;
+
++---------------+----------------------+---------+
+| applicationid | jobtitle                   | jobid    |
++---------------+----------------------+---------+
+|             1        | Data analyst           |   102     |
+|             2        | NULL                     |  NULL |
+|             3        | developer                |   101    |
+|             3        | Tester                      |   103    |
+|             4        | developer                |   104    |
+|             5        | Software Engineer |   105    |
+|             6        | Data Engineer        |   106    |
+|             7        | NULL                     |  NULL |
+|             8        | Tester                      |   103    |
+|             9        | Data analyst           |   102    |
+|            10       | Software Engineer |   105    |
++--------------+-----------------------+---------+
+
+20.List all combinations of applicants and companies where the company is in a specific city and the applicant has more than 2 years of experience. For example: city=Chennai
+select a.firstname,a.lastname,c.companyname,c.companylocation, a.experience from applicants a 
+right join applications ap on a.applicationid=ap.applicationid 
+right join jobs j on j.jobid=ap.jobid join companies c on c.companyid=j.companyid 
+where c.companylocation='Chennai' and a.experience>2;
++-----------+------------+------------------+---------------------+-------------+
+| firstname | lastname  | companyname | companylocation | experience |
++-----------+------------+------------------+---------------------+-------------+
+| John        | Doe            | Hexaware        | Chennai                |          5        |
+| Daniel     | Rodriguez | Hexaware        | Chennai                |          3        |
++-----------+------------+------------------+---------------------+-------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
